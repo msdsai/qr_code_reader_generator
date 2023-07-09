@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>QR Code</title>
+    <link rel="shortcut icon" href="qrt.png" type="image/x-icon">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='generator.css'>
+    <link rel='stylesheet' href='scanner.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class ="container">
+        <nav>
+            <button class = "navGen">Generator</button>
+            <button class = "navScan">Scanner</button>
+        </nav>
+        <div class="generator" >
+            <h1>QR Code Generator</h1>
+            <p>Paste a URL or enter to create QR Code</p>
+        
+            <div class="generator-form">
+                <input type="text" placeholder="Enter the text or URL">
+                <button>Generate QR Code</button>
+            </div>
+            <div class="generator-img">
+                <img src="./qrt.png" alt="qr-code">
+            </div>
+            <div>
+                <div class ="generator-btn">
+                    <button class="btn-link">Download<i class="fa-solid fa-download"></i></button>
+                </div>
+            </div>    
+        </div>
+        <div class="scanner" style="display: none">
+            <h1>
+                QR Code Scanner or Reader
+                <i class="fa-solid fa-camera"></i>
+                <i class="fa-solid fa-circle-stop"></i>
+            </h1>
+            <form class="scanner-form">
+                <input type="file" accept="image/*"  hidden>
+                <img src="qrt.png" alt="qr-code">
+                <video></video>
+                <div class="content">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>Upload Qr Code to scan</p>
+                </div>
+            </form>
+            <div class="scanner-details">
+                <textarea disabled></textarea>
+                <div class="btn">
+                    <button class="copy">Copy</button>
+                    <button class="close">Close</button>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="generator.js"></script>
+    <script src="scanner.js"></script>
+    <script src="instascan.min.js"></script>
+</body>
+</html>
